@@ -1,0 +1,70 @@
+= C++ Meetup
+:revealjs_theme: sky
+:imagesdir: .
+
+Getting started with Boost Multi-Index
+
+== What is it?
+
+* Part of the Boost libraries since version 1.32
+* Boost Software License, Version 1.0
+* Header-only library
+* Provides `multi_index_container`, a special data structure for storing objects
+
+== Multi indexing?
+
+* Borrowed from relational database terminology
+* Storage of complex objects managing multiple _indices_ with different sorting and access semantics
+
+image::multi_index_cont_example.png[Overview]
+
+== Intermezzo
+
+Some live coding...
+
+== Some index types
+
+* `sequenced`
+** non key-based
+** works like `std::list`
+
+* `random_access`
+** non key-based
+** works like `std::vector`
+
+== More index types
+
+* `ordered[_non]_unique`
+** key-based, ordered
+** works like `std::[multi]set`
+
+* `hashed[_non]_unique`
+** key-based, hashed
+** works like `std::unordered_[multi]set`
+
+== Key extraction
+
+* Identity
+* Member
+* `[const_]mem_fun`
+* `global_fun`
+* User defined
+* Composite keys
+
+== Work with indexes
+
+* Access to objects in container via index
+* Operations may fail due to clashing with other indices
+* *Important:* Objects are immutable
+* Modification through member functions `replace` and `modify`
+* Move between indices with `project`
+
+== Links
+
+* Documentation
+** https://www.boost.org/doc/libs/1_68_0/libs/multi_index/doc/index.html
+* Getting Started with Boost MultiIndex
+** https://www.martyndavis.com/?p=633
+* Why you should use Boost.MultiIndex
+** https://david-grs.github.io/why_boost_multi_index_container-part1/
+** https://david-grs.github.io/why_boost_multi_index_container-part2/
